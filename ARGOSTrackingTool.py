@@ -10,7 +10,7 @@
 #--------------------------------------------------------------
 
 #Ask user for the search date
-user_date = "7/12/2003" #input("Enter date to search for Sara:")
+user_date = input("Enter date to search for Sara:")
 
 #Create a variable pointing to the data file
 file_name = './data/raw/sara.txt'
@@ -61,6 +61,10 @@ for date_item in date_dict.items():
     if the_date == user_date:
         #if so, add the key to the list
         matching_keys.append(the_key)
+
+#If no records found, tell the user
+if len(matching_keys) == 0:
+    print(f"No observations on {user_date}")
 
 #Reveal locations for each key in matching_keys
 for matching_key in matching_keys:
